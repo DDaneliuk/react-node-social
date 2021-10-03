@@ -1,0 +1,23 @@
+{
+  "name": "react-node-social",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node server/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DDaneliuk/react-node-social.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/DDaneliuk/react-node-social/issues"
+  },
+  "homepage": "https://github.com/DDaneliuk/react-node-social#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
