@@ -1,0 +1,12 @@
+@import "../style/_profileImg.module";
+@import "../style/_paragraph.module";
+.post{
+    width: 100%;
+    display: flex;
+    border-bottom: 1px solid #536571;
+    padding: 10px 16px;
+    align-items: end;
+}
+.imgPost{
+    margin: 0 15px 0 0;
+}

@@ -1,0 +1,23 @@
+@import "../style/_profileImg.module";
+.profile{
+    width: 900px;
+    margin: 0 auto;
+}
+.info{
+    margin: 20px auto;
+    width: fit-content;
+    display: flex;
+    gap: 100px;
+}
+.blockImg {
+    width: 300px;
+}
+.details{
+    width: 350px;
+}
+.listItem{
+    padding: 5px 0;
+}
+.imgMain{
+    margin: 0 auto;
+}

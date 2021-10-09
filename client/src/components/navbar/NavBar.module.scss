@@ -1,18 +1,16 @@
-.App-logo {
+@import '../style/primaryBtn.module';
+
+.logo {
     height: 50px;
     pointer-events: none;
+    animation: App-logo-spin infinite 5s linear;
   }
-@media (prefers-reduced-motion: no-preference) {
-    .App-logo {
-      animation: App-logo-spin infinite 5s linear;
-    }
-}
 @keyframes App-logo-spin {
     from {transform: rotate(0deg);}
     to {transform: rotate(360deg);}
   }
   
-.App-header {
+.header {
   width: 1200px;
   margin: 0 auto;
   padding: 20px;
@@ -21,19 +19,19 @@
   align-items: center;
   color: white;
 }
-.app-logo{
+.flexLogo{
   width: 100%;
   display: flex;
   align-items: center;
 }
-.app-nav {
+.nav {
   width: auto;
 }
-.app-nav ul {
+.navList {
   display: flex;
 }
-.app-nav ul li{
+.listItem{
   display: block;
-  padding: 20px 35px;
+  padding: 10px 16px;
   width: max-content;
 }

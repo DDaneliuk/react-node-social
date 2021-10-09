@@ -1,19 +1,19 @@
 import React from 'react';
-import './NavBar.css'
+import style from './NavBar.module.scss'
 import logo from "./logo.svg";
 
 const NavBar = () => {
     return(
-        <header className="App-header">
-            <div className="app-logo">
-                <img src={logo} className="App-logo" alt="logo" />
+        <header className={style.header}>
+            <div className={style.flexLogo}>
+                <img src={logo} className={style.logo} alt="logo" />
                 <h1>React Social Club</h1>
             </div>
-            <nav className="app-nav">
-                <ul>
-                    <li><a href="/#">Feed</a></li>
-                    <li><a href="/#">Login</a></li>
-                    <li><a href="/#">Sign up</a></li>
+            <nav className={style.nav}>
+                <ul className={style.navList}>
+                    <li className={style.listItem}><a href="/#">Feed</a></li>
+                    <li className={style.listItem}><a href="/#">Login</a></li>
+                    <li className={`${style.listItem} ${style.primaryBtn}`}><a href="/#">Sign up</a></li>
                 </ul>
             </nav>
         </header>
