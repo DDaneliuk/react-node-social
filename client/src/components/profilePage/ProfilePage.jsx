@@ -3,7 +3,7 @@ import style from './profilePage.module.scss'
 import Posts from '../posts/posts';
 import profileImg from '../../assets/img/profile-img.jpg';
 
-const ProfilePage = () => {
+const ProfilePage = (props) => {
     return(
         <div className={style.profile}>
             <div className={style.info}>
@@ -21,7 +21,7 @@ const ProfilePage = () => {
                     </div>
                 </div>
             </div>
-            <Posts />
+            <Posts data={props.profilePage} addPost={props.addPost} updateNewPostText={props.updateNewPostText}/>
         </div>
     )
 }

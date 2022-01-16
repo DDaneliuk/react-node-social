@@ -1,25 +1,29 @@
 import React from "react";
-import NavBar from "./components/navbar/NavBar"
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import NavBar from "./components/navbar/NavBar";
 import ProfilePage from "./components/profilePage/ProfilePage";
-import './App.scss';
+import "./App.scss";
 
-function App(){
-  // const [data, setData] = React.useState(null);
-
-  // React.useEffect(() => {
-  //   fetch("/api")
-  //   .then((res) => res.json())
-  //   .then((data) => setData(data.message));
-  // }, []);
-
+function App(props) {
   return (
-    <div className="App">
-      <NavBar />
-      <ProfilePage />
-      {/* <p>{!data ? "Loading..." : data}</p> */}
-    </div>
-  )
+    <Router>
+      <div className="App">
+        <NavBar />
+        <Routes>
+          <Route
+            path=""
+            element={
+              <ProfilePage
+                profilePage={props.state.profilePage}
+                addPost={props.addPost}
+                updateNewPostText={props.updateNewPostText}
+              />
+            }
+          ></Route>
+        </Routes>
+      </div>
+    </Router>
+  );
 }
-
 
 export default App;
