@@ -11,16 +11,10 @@ function App(props) {
             <div className="App">
                 <NavBar/>
                 <Routes>
-                    <Route
-                        path="/"
-                        element={
-                            <ProfilePage
-                                profilePage={props.state.profilePage}
-                                dispatch={props.dispatch}
-                            />
-                        }
-                    />
-                    <Route path="/message" element={<MessagePage/>}/>
+                    <Route path="/"
+                           element={<ProfilePage profilePage={props.state.profilePage} dispatch={props.dispatch}/>}/>
+                    <Route path="/message"
+                           element={<MessagePage messagePage={props.state.messagePage} dispatch={props.dispatch}/>}/>
                 </Routes>
             </div>
         </Router>
