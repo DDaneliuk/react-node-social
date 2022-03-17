@@ -1,6 +1,7 @@
 import React from "react";
 import Post from "./Post";
 import style from "./Posts.module.scss";
+import {addPostActionCreator, updateNewPostTextActionCreator} from "../../redux/state";
 
 const Posts = (props) => {
     let postsElements = props.data.posts.map((post) => (
@@ -11,12 +12,12 @@ const Posts = (props) => {
 
     const addPostHandler = (e) => {
         e.preventDefault();
-        props.addPost();
+        props.dispatch(addPostActionCreator());
     };
 
     let onPostChange = () => {
         let text = newPostElement.current.value;
-        props.updateNewPostText(text)
+        props.dispatch(updateNewPostTextActionCreator(text))
     }
 
     return (
@@ -33,7 +34,9 @@ const Posts = (props) => {
                 />
                 <div className={style.messageBtn}>
                     <p className={style.hint}>Press button to posts your thoughts</p>
-                    <button onClick={(e) => addPostHandler(e)} className={style.primaryBtn}>Add post</button>
+                    <button onClick={(e) => addPostHandler(e)}
+                            className={style.primaryBtn}>Add post
+                    </button>
                 </div>
             </form>
             <div className={style.posts}>

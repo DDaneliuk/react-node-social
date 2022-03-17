@@ -4,11 +4,11 @@ import Posts from '../../components/posts/Posts';
 import profileImg from '../../assets/img/profile-img.jpg';
 
 const ProfilePage = (props) => {
-    return(
+    return (
         <div className={style.profile}>
             <div className={style.info}>
                 <div className={style.blockImg}>
-                    <img className={style.imgMain} src={profileImg} alt="profile" />
+                    <img className={style.imgMain} src={profileImg} alt="profile"/>
                 </div>
                 <div className={style.details}>
                     <h2>Will Smith</h2>
@@ -21,7 +21,9 @@ const ProfilePage = (props) => {
                     </div>
                 </div>
             </div>
-            <Posts data={props.profilePage} addPost={props.addPost} updateNewPostText={props.updateNewPostText}/>
+            <Posts data={props.profilePage}
+                   dispatch={props.dispatch}
+            />
         </div>
     )
 }
