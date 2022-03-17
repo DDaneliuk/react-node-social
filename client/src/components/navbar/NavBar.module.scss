@@ -1,15 +1,20 @@
 @import '../style/primaryBtn.module';
 
 .logo {
-    height: 50px;
-    pointer-events: none;
-    animation: App-logo-spin infinite 5s linear;
-  }
+  height: 50px;
+  pointer-events: none;
+  animation: App-logo-spin infinite 5s linear;
+}
+
 @keyframes App-logo-spin {
-    from {transform: rotate(0deg);}
-    to {transform: rotate(360deg);}
+  from {
+    transform: rotate(0deg);
   }
-  
+  to {
+    transform: rotate(360deg);
+  }
+}
+
 .header {
   width: 1200px;
   margin: 0 auto;
@@ -19,19 +24,24 @@
   align-items: center;
   color: white;
 }
-.flexLogo{
+
+.flexLogo {
   width: 100%;
   display: flex;
   align-items: center;
 }
+
 .nav {
   width: auto;
 }
+
 .navList {
   display: flex;
 }
-.listItem{
+
+.navItem {
   display: block;
   padding: 10px 16px;
   width: max-content;
+  cursor: pointer;
 }

@@ -1,5 +1,5 @@
 import React from "react";
-import style from "./post.module.scss"
+import style from "./Post.module.scss"
 import profileImg from "../../assets/img/profile-img.jpg"
 
 const Post = (props) => {
@@ -16,4 +16,4 @@ const Post = (props) => {
     )
 }
 
-export default Post 
+export default Post

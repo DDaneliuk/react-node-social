@@ -1,6 +1,6 @@
 import React from 'react';
-import style from './profilePage.module.scss'
-import Posts from '../posts/posts';
+import style from './ProfilePage.module.scss'
+import Posts from '../../components/posts/Posts';
 import profileImg from '../../assets/img/profile-img.jpg';
 
 const ProfilePage = (props) => {
@@ -14,7 +14,7 @@ const ProfilePage = (props) => {
                     <h2>Will Smith</h2>
                     <div className="person">
                         <ul>
-                            <li className={style.listItem}>Date of Dirth: 25 Sep 1968</li>
+                            <li className={style.listItem}>Date of Birth: 25 Sep 1968</li>
                             <li className={style.listItem}>Place: Philadelphia USA</li>
                             <li className={style.listItem}>Who is: Actor</li>
                         </ul>
