@@ -1,23 +1,22 @@
 import React from "react";
 import Post from "./Post";
 import style from "./Posts.module.scss";
-import {addPostActionCreator, updateNewPostTextActionCreator} from "../../redux/reducers/profile";
 
 const Posts = (props) => {
-    let postsElements = props.data.posts.map((post) => (
+    let postsElements = props.posts.map((post) => (
         <Post data={post} key={post.id}/>
     ));
 
     let newPostElement = React.createRef();
 
     const addPostHandler = (e) => {
-        e.preventDefault();
-        props.dispatch(addPostActionCreator());
+        e.preventDefault()
+        props.addPost()
     };
 
     let onPostChange = () => {
         let text = newPostElement.current.value;
-        props.dispatch(updateNewPostTextActionCreator(text))
+        props.updateNewPostText(text)
     }
 
     return (
@@ -26,10 +25,9 @@ const Posts = (props) => {
             <form>
                 <textarea
                     ref={newPostElement}
-                    className={style.textarea}
                     rows="3"
                     placeholder="Write something new..."
-                    value={props.data.postAreaText}
+                    value={props.postAreaText}
                     onChange={onPostChange}
                 />
                 <div className={style.messageBtn}>

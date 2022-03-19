@@ -1,7 +1,8 @@
 import React from 'react';
 import style from './ProfilePage.module.scss'
-import Posts from '../../components/posts/Posts';
+// import Posts from '../../components/posts/Posts';
 import profileImg from '../../assets/img/profile-img.jpg';
+import PostsContainer from "../../components/posts/PostsContainer";
 
 const ProfilePage = (props) => {
     return (
@@ -21,9 +22,7 @@ const ProfilePage = (props) => {
                     </div>
                 </div>
             </div>
-            <Posts data={props.profilePage}
-                   dispatch={props.dispatch}
-            />
+            <PostsContainer store={props.store}/>
         </div>
     )
 }

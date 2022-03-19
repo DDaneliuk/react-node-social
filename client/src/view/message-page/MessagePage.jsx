@@ -2,27 +2,26 @@ import React from "react"
 import Dialog from "../../components/dialog/Dialog";
 import Message from "../../components/message/Message";
 import style from "./MessagePage.module.scss";
-import {sendMessageCreator, updateMessageBodyCreator} from "../../redux/reducers/message";
 
 
 const MessagePage = (props) => {
-    const messBody = props.messagePage.newMessageBody
+    const messBody = props.newMessageBody
 
     const onSendMessHandler = (e) => {
         e.preventDefault()
-        props.dispatch(sendMessageCreator())
+        props.onSendMessHandler()
     }
     const onTextMessChange = (e) => {
         const body = e.target.value
-        props.dispatch(updateMessageBodyCreator(body))
+        props.onTextMessChange(body)
     }
     return (
         <div>
             <h1>Messages</h1>
             <div className={style.flexContainer}>
-                <Dialog dialogs={props.messagePage.dialogs}/>
+                <Dialog dialogs={props.dialogs}/>
                 <div className={style.messageContainer}>
-                    <Message messages={props.messagePage.messages}/>
+                    <Message messages={props.messages}/>
                     <div>
                         <form>
                             <textarea
