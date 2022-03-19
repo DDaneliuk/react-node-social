@@ -1,13 +1,11 @@
 import React from "react"
 import Dialog from "../../components/dialog/Dialog";
 import Message from "../../components/message/Message";
-import style from "../../components/posts/Posts.module.scss";
+import style from "./MessagePage.module.scss";
 import {sendMessageCreator, updateMessageBodyCreator} from "../../redux/reducers/message";
 
 
 const MessagePage = (props) => {
-    const dialogsElem = props.messagePage.dialogs.map(d => <Dialog id={d.id} name={d.name}/>)
-    const messagesElem = props.messagePage.messages.map(m => <Message id={m.id} message={m.messages}/>)
     const messBody = props.messagePage.newMessageBody
 
     const onSendMessHandler = (e) => {
@@ -20,23 +18,30 @@ const MessagePage = (props) => {
     }
     return (
         <div>
-            <h1>Message</h1>
-            <div>{dialogsElem}</div>
-            <div>{messagesElem}</div>
-            <div>
-                <form>
-                <textarea
-                    rows="3"
-                    placeholder="Write something new..."
-                    value={messBody}
-                    onChange={e => onTextMessChange(e)}
-                />
-                    <div className={style.messageBtn}>
-                        <p className={style.hint}>Press button to send your mess</p>
-                        <button className={style.primaryBtn} onClick={e => onSendMessHandler(e)}>Send Message</button>
+            <h1>Messages</h1>
+            <div className={style.flexContainer}>
+                <Dialog dialogs={props.messagePage.dialogs}/>
+                <div className={style.messageContainer}>
+                    <Message messages={props.messagePage.messages}/>
+                    <div>
+                        <form>
+                            <textarea
+                                rows="3"
+                                placeholder="Write something new..."
+                                value={messBody}
+                                onChange={e => onTextMessChange(e)}
+                            />
+                            <div className={style.messForm}>
+                                <button className={`primaryBtn ${style.primaryBtn}`} onClick={e => onSendMessHandler(e)}>Send Message
+                                </button>
+                                <p className='hint'>Press button to send your mess</p>
+                            </div>
+                        </form>
                     </div>
-                </form>
+                </div>
+
             </div>
+
         </div>
     )
 }

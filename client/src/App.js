@@ -4,6 +4,7 @@ import NavBar from "./components/navbar/NavBar";
 import ProfilePage from "./view/profile-page/ProfilePage";
 import MessagePage from "./view/message-page/MessagePage";
 import "./App.scss";
+import './components/style/main.scss'
 
 function App(props) {
     return (
