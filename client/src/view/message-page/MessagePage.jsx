@@ -9,11 +9,11 @@ const MessagePage = (props) => {
 
     const onSendMessHandler = (e) => {
         e.preventDefault()
-        props.onSendMessHandler()
+        props.sendMessage()
     }
     const onTextMessChange = (e) => {
         const body = e.target.value
-        props.onTextMessChange(body)
+        props.updateMessageBodyCreator(body)
     }
     return (
         <div>
@@ -28,10 +28,12 @@ const MessagePage = (props) => {
                                 rows="3"
                                 placeholder="Write something new..."
                                 value={messBody}
-                                onChange={e => onTextMessChange(e)}
+                                onChange={onTextMessChange}
                             />
                             <div className={style.messForm}>
-                                <button className={`primaryBtn ${style.primaryBtn}`} onClick={e => onSendMessHandler(e)}>Send Message
+                                <button className={`primaryBtn ${style.primaryBtn}`}
+                                        onClick={onSendMessHandler}>
+                                    Send Message
                                 </button>
                                 <p className='hint'>Press button to send your mess</p>
                             </div>

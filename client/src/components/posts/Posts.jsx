@@ -11,12 +11,12 @@ const Posts = (props) => {
 
     const addPostHandler = (e) => {
         e.preventDefault()
-        props.addPost()
+        props.addPostAction()
     };
 
     let onPostChange = () => {
         let text = newPostElement.current.value;
-        props.updateNewPostText(text)
+        props.updateNewPostTextAction(text)
     }
 
     return (
