@@ -3,8 +3,8 @@ import {Routes, Route} from "react-router-dom";
 import NavBar from "./components/navbar/NavBar";
 import ProfilePage from "./view/profile-page/ProfilePage";
 import MessagePageContainer from "./view/message-page/MessagePageContainer";
-import "./App.scss";
-import './components/style/main.scss'
+import UsersPageContainer from "./view/users-page/UsersPageContainer";
+import './style/main.scss'
 
 function App(props) {
     return (
@@ -13,6 +13,7 @@ function App(props) {
             <Routes>
                 <Route path="/" element={<ProfilePage/>}/>
                 <Route path="/message" element={<MessagePageContainer/>}/>
+                <Route path="/users" element={<UsersPageContainer/>}/>
             </Routes>
         </div>
     );

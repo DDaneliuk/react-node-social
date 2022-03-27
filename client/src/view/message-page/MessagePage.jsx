@@ -16,9 +16,9 @@ const MessagePage = (props) => {
         props.updateMessageBodyCreator(body)
     }
     return (
-        <div>
+        <div className='pageLayout'>
             <h1>Messages</h1>
-            <div className={style.flexContainer}>
+            <div className='flexContainer'>
                 <Dialog dialogs={props.dialogs}/>
                 <div className={style.messageContainer}>
                     <Message messages={props.messages}/>

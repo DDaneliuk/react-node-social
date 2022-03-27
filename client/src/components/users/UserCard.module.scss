@@ -1,0 +1,25 @@
+.userCard {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  border: 2px solid #ffffff;
+  border-radius: 12px;
+  padding: 15px 30px;
+  margin: 0 0 20px;
+}
+
+.userName {
+  font-size: 30px;
+  font-weight: 400;
+  margin: 0;
+}
+
+.userStatus {
+  margin: 5px 0 0;
+}
+
+.userFollow {
+  display: flex;
+  align-items: baseline;
+  gap: 30px;
+}
