@@ -33,7 +33,7 @@ const Posts = (props) => {
                 <div className={style.messageBtn}>
                     <p className={style.hint}>Press button to posts your thoughts</p>
                     <button onClick={(e) => addPostHandler(e)}
-                            className={style.primaryBtn}>Add post
+                            className='primaryBtn'>Add post
                     </button>
                 </div>
             </form>

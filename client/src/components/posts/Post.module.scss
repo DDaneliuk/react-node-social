@@ -1,4 +1,3 @@
-@import "../../style/_profileImg.module";
 @import "../../style/_paragraph.module";
 .post{
     width: 100%;
@@ -9,4 +8,15 @@
 }
 .imgPost{
     margin: 0 15px 0 0;
+}
+.imgMain{
+    border-radius: 50%;
+    width: 150px;
+    margin: 0 auto;
+    display: block;
+}
+.imgPost{
+    border-radius: 50%;
+    width: 50px;
+    display: block;
 }

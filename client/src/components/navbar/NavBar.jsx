@@ -16,7 +16,7 @@ const NavBar = () => {
                     <li className={style.navItem}><Link to="/message">Message</Link></li>
                     <li className={style.navItem}><Link to="/users">Users</Link></li>
                     <li className={style.navItem}><Link to="/login">Login</Link></li>
-                    <li className={`${style.navItem} ${style.primaryBtn}`}><Link to="/signup">Sign up</Link></li>
+                    <li className={`${style.navItem} primaryBtn`}><Link to="/signup">Sign up</Link></li>
                 </ul>
             </nav>
         </header>

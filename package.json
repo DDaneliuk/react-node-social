@@ -19,6 +19,7 @@
   "homepage": "https://github.com/DDaneliuk/react-node-social#readme",
   "dependencies": {
     "express": "^4.17.1",
+    "json-server": "^0.17.0",
     "react-redux": "^7.2.6"
   }
 }

@@ -1,0 +1,114 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "followed": false,
+      "firstName": "michael.fedorov",
+      "status": "Отец, муж, министр",
+      "location": {
+        "city": "Kiev",
+        "country": "Ukraine"
+      }
+    },
+    {
+      "id": 2,
+      "followed": false,
+      "firstName": "mbanik",
+      "status": "Керівник з розвитку електронних послуг на @diia.gov.ua в команді @mintsyfra.official",
+      "location": {
+        "city": "Kiev",
+        "country": "Ukraine"
+      }
+    },
+    {
+      "id": 3,
+      "followed": false,
+      "firstName": "yevtushenko_c",
+      "status": "Керівний партнер @unit.city\nАмбасадор електрокарів @bmwua\nПро інновації та підприємництво\nПро сім‘ю та спорт",
+      "location": {
+        "city": "Kiev",
+        "country": "Ukraine"
+      }
+    },
+    {
+      "id": 4,
+      "followed": false,
+      "firstName": "gorovaya_irina",
+      "status": "Proud to be Ukrainian\uD83C\uDDFA\uD83C\uDDE6\nНе ищи границы - открывай грани \uD83D\uDE80\n• CEO/Owner @mozgi_group\n• Producer @mozgientertainment",
+      "location": {
+        "city": "Kiev",
+        "country": "Ukraine"
+      }
+    },
+    {
+      "id": 5,
+      "followed": false,
+      "firstName": "durov",
+      "status": "Founder / CEO at Telegram",
+      "location": {
+        "city": "Kiev",
+        "country": "Ukraine"
+      }
+    },
+    {
+      "id": 6,
+      "followed": false,
+      "firstName": "gorokhovsky",
+      "status": "monobank. Довоенный выпуск «CEO на 1 день»",
+      "location": {
+        "city": "Kiev",
+        "country": "Ukraine"
+      }
+    },
+    {
+      "id": 7,
+      "followed": false,
+      "firstName": "tot_samy_chichvarkin",
+      "status": "Hedonist. Anarchist-capitalist.Willy Wonka of wine. Лёгкий на подъёб. Истребитель сухого. Дедушка с жемчужной серёжкой. @hedonism_wines",
+      "location": {
+        "city": "Kiev",
+        "country": "Ukraine"
+      }
+    },
+    {
+      "id": 8,
+      "followed": false,
+      "firstName": "elonrmuskk",
+      "status": "Elon Musk is the CEO and CTO of SpaceX also the CEO and product architect at Tesla.\nThis page is dedicated to his legacy",
+      "location": {
+        "city": "California",
+        "country": "USA"
+      }
+    },
+    {
+      "id": 9,
+      "followed": false,
+      "firstName": "mishka_z",
+      "status": "Mikhail Zelman. Restauranteur.",
+      "location": {
+        "city": "Kiev",
+        "country": "Ukraine"
+      }
+    },
+    {
+      "id": 10,
+      "followed": false,
+      "firstName": "ice_scream",
+      "status": "Founder @netpeak_group\nFounder @choice31_education\nFounder @gladpet_org",
+      "location": {
+        "city": "Kiev",
+        "country": "Ukraine"
+      }
+    },
+    {
+      "id": 11,
+      "followed": false,
+      "firstName": "dominiquepiotet",
+      "status": "Dominique Piotet\nCEO @unit.city",
+      "location": {
+        "city": "Kiev",
+        "country": "Ukraine"
+      }
+    }
+  ]
+}
