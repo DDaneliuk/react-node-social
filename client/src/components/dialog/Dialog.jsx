@@ -10,7 +10,6 @@ const Dialog = (props) => {
                 </div>))}
             </div>
         </div>
-
     )
 }
 
