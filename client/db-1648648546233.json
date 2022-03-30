@@ -5,7 +5,6 @@
       "followed": false,
       "username": "michael.fedorov",
       "status": "Отец, муж, министр",
-      "profileUrl" : "http://localhost:8000/assets/img/profiles/michael_fedorov.jpg",
       "location": {
         "city": "Kiev",
         "country": "Ukraine"
@@ -35,7 +34,7 @@
       "id": 4,
       "followed": false,
       "username": "gorovaya_irina",
-      "status": "Proud to be Ukrainian\uD83C\uDDFA\uD83C\uDDE6\nНе ищи границы - открывай грани \uD83D\uDE80\n• CEO/Owner @mozgi_group\n• Producer @mozgientertainment",
+      "status": "Proud to be Ukrainian🇺🇦\nНе ищи границы - открывай грани 🚀\n• CEO/Owner @mozgi_group\n• Producer @mozgientertainment",
       "location": {
         "city": "Kiev",
         "country": "Ukraine"
@@ -118,26 +117,10 @@
       "username": "michael.fedorov",
       "firstname": "Michael",
       "lastname": "Fedorov",
-      "whois" : "Minister of Digital Transformation",
+      "whois": "Minister of Digital Transformation",
       "birthday": "29 August 2019",
       "status": "Отец, муж, министр",
       "followed": false,
-      "profileUrl" : "http://localhost:8000/assets/img/profiles/michael_fedorov.jpg",
-      "location": {
-        "city": "Kiev",
-        "country": "Ukraine"
-      }
-    },
-    {
-      "id": 2,
-      "username": "mbanik",
-      "firstname": "Mstyslav",
-      "lastname": "Banik",
-      "whois" : "Minister of Digital Transformation",
-      "birthday": "29 August 2019",
-      "status": "Керівник з розвитку електронних послуг на @diia.gov.ua в команді @mintsyfra.official \uD83E\uDD18\uD83C\uDFFB",
-      "followed": false,
-      "profileUrl" : "http://localhost:8000/assets/img/profiles/mbanik.jpg",
       "location": {
         "city": "Kiev",
         "country": "Ukraine"

@@ -1,13 +1,14 @@
 import React from "react";
 // style
 import style from './UserCard.module.scss'
+import {NavLink} from "react-router-dom";
 
 const UserCard = (props) => {
     return (
         <div className={style.userCard}>
             <div className={style.flexCard}>
                 <div className={style.nameBlock}>
-                    <p className={style.userName}>{props.user.firstName}</p>
+                    <NavLink to={`/profile/${props.user.id}`}> <p className={style.userName}>{props.user.username}</p></NavLink>
                 </div>
                 <div className={style.userFollow}>
                     <p>{props.user.location.city}, {props.user.location.country}</p>

@@ -1,28 +1,31 @@
 import React from 'react';
 import style from './ProfilePage.module.scss'
-// import Posts from '../../components/posts/Posts';
-import profileImg from '../../assets/img/profile-img.jpg';
 import PostsContainer from "../../components/posts/PostsContainer";
+import Preloader from "../../components/preloader/Preloader";
 
 const ProfilePage = (props) => {
+    if(!props.profile){
+        return <Preloader/>
+    }
     return (
         <div className={style.profile}>
             <div className={style.info}>
                 <div className={style.blockImg}>
-                    <img className={style.imgMain} src={profileImg} alt="profile"/>
+                    <img className={style.imgMain} src={props.profile.profileUrl} alt="profile"/>
                 </div>
                 <div className={style.details}>
-                    <h2>Will Smith</h2>
+                    <h2 className={style.userName}>{props.profile.username}</h2>
                     <div className="person">
                         <ul>
-                            <li className={style.listItem}>Date of Birth: 25 Sep 1968</li>
-                            <li className={style.listItem}>Place: Philadelphia USA</li>
-                            <li className={style.listItem}>Who is: Actor</li>
+                            <li className={style.listItem}>{props.profile.firstname} {props.profile.lastname}</li>
+                            <li className={style.listItem}>{props.profile.birthday}</li>
+                            <li className={style.listItem}>{props.profile.location.city} {props.profile.location.country}</li>
+                            <li className={style.listItem}>{props.profile.whois} </li>
                         </ul>
                     </div>
                 </div>
             </div>
-            <PostsContainer store={props.store}/>
+            <PostsContainer profile={props.profile}/>
         </div>
     )
 }
