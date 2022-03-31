@@ -18,8 +18,11 @@
   },
   "homepage": "https://github.com/DDaneliuk/react-node-social#readme",
   "dependencies": {
+    "bcrypt": "^5.0.1",
+    "body-parser": "^1.19.2",
+    "cors": "^2.8.5",
     "express": "^4.17.1",
-    "json-server": "^0.17.0",
-    "react-redux": "^7.2.6"
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^6.2.9"
   }
 }
