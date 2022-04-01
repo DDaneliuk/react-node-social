@@ -4,13 +4,15 @@ import messageReducer from "./reducers/message";
 import usersReducer from "./reducers/users";
 import authReducer from "./reducers/auth";
 import signupReducer from "./reducers/signup";
+import loginReducer from "./reducers/login";
 
 const reducers = combineReducers({
     profilePage: profileReducer,
     messagePage: messageReducer,
     usersPage: usersReducer,
     auth: authReducer,
-    signupPage: signupReducer
+    signupPage: signupReducer,
+    loginPage: loginReducer,
 })
 
 const store = createStore(reducers);

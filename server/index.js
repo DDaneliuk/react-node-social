@@ -5,6 +5,8 @@ const bcrypt = require('bcrypt')
 const jwt = require('jsonwebtoken')
 const User = require('./model/user')
 const cors = require('cors')
+// valid
+const {validationJWT} = require('./validationJWT/index')
 
 const PORT = process.env.PORT || 3001;
 
@@ -34,19 +36,58 @@ app.post('/signup', async (req, res) => {
 
     if (takenUserName || takenUserEmail) {
         res.json({message: 'Email or username has already taken'})
-    }
-    else {
+    } else {
         user.password = await bcrypt.hash(req.body.password, 10)
 
-        const dbUser = new User ({
+        const dbUser = new User({
             username: user.username.toLowerCase(),
             email: user.email.toLowerCase(),
             password: user.password
         })
 
         await dbUser.save()
-        res.json({message:'Success'})
+        res.json({message: 'Success'})
     }
 })
 
+app.post('/login', async (req, res) => {
+    console.log(req.body)
+    const user = req.body;
 
+    User.findOne({username: user.username})
+        .then(dbUser => {
+            if (!dbUser) {
+                return res.json({message: 'Invalid username'})
+            }
+            bcrypt.compare(user.password, dbUser.password)
+                .then(isCorrect => {
+                    if(isCorrect){
+                        const payload = {
+                            id: dbUser._id,
+                            username: dbUser.username,
+                        }
+                        jwt.sign(
+                            payload,
+                            'secret',
+                            {expiresIn: 36000},
+                            (err, token) => {
+                                if (err) return res.json({message: err})
+                                return res.json({
+                                    message: "Success",
+                                    token: "Bearer " + token
+                                })
+                            }
+                        )
+                    } else {
+                        return res.json({
+                            message: 'Invalid Username or Password'
+                        })
+                    }
+                })
+        })
+})
+
+app.get('/users', validationJWT, (req, res, next) =>{
+    console.log(req.body)
+    res.json({isLoggedIn: true, username:req.user.username})
+})
