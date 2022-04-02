@@ -32,10 +32,12 @@ app.post('/signup', async (req, res) => {
     const user = req.body;
 
     const takenUserName = await User.findOne({username: user.username})
-    const takenUserEmail = await User.findOne({username: user.email})
+    const takenUserEmail = await User.findOne({email: user.email})
 
-    if (takenUserName || takenUserEmail) {
-        res.json({message: 'Email or username has already taken'})
+    if (takenUserName) {
+        res.json({message: 'Username has already taken'})
+    } else if (takenUserEmail) {
+        res.json({message: 'Email has already taken'})
     } else {
         user.password = await bcrypt.hash(req.body.password, 10)
 
@@ -61,7 +63,7 @@ app.post('/login', async (req, res) => {
             }
             bcrypt.compare(user.password, dbUser.password)
                 .then(isCorrect => {
-                    if(isCorrect){
+                    if (isCorrect) {
                         const payload = {
                             id: dbUser._id,
                             username: dbUser.username,
@@ -87,7 +89,7 @@ app.post('/login', async (req, res) => {
         })
 })
 
-app.get('/users', validationJWT, (req, res, next) =>{
+app.get('/users', validationJWT, (req, res, next) => {
     console.log(req.body)
-    res.json({isLoggedIn: true, username:req.user.username})
+    res.json({isLoggedIn: true, username: req.user.username})
 })
