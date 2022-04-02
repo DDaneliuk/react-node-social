@@ -8,17 +8,22 @@ import {
     setCurrentPage,
     setUsers,
     setUsersCount,
-    unFollow
+    unfollow
 } from "../../redux/reducers/users";
 import Preloader from "../../components/preloader/Preloader";
 
 class UsersPageContainer extends React.Component {
     componentDidMount() {
         this.props.isFetchingToggle(true)
-        axios.get(`http://localhost:8000/users?_page=${this.props.currentPage}&_limit=${this.props.pageSize}`)
+        axios.get(`http://localhost:3001/users?page=${this.props.currentPage}&limit=${this.props.pageSize}`, {
+            headers: {
+                'Content-Type': 'application/json',
+                'x-access-token': localStorage.getItem('token')
+            }
+        })
             .then(res => {
-                this.props.setUsers(res.data)
-                this.props.setUsersCount(res.headers["x-total-count"])
+                this.props.setUsers(res.data.users)
+                this.props.setUsersCount(res.data.totalCount)
                 this.props.isFetchingToggle(false)
             })
     }
@@ -26,10 +31,15 @@ class UsersPageContainer extends React.Component {
     onPageChanged = (page) => {
         this.props.isFetchingToggle(true)
         this.props.setCurrentPage(page)
-        axios.get(`http://localhost:8000/users?_page=${page}&_limit=${this.props.pageSize}`)
+        axios.get(`http://localhost:3001/users?page=${page}&limit=${this.props.pageSize}`, {
+            headers: {
+                'Content-Type': 'application/json',
+                'x-access-token': localStorage.getItem('token')
+            }
+        })
             .then(res => {
-                this.props.setUsers(res.data)
-                this.props.setUsersCount(res.headers["x-total-count"])
+                this.props.setUsers(res.data.users)
+                this.props.setUsersCount(res.data.totalCount)
                 this.props.isFetchingToggle(false)
             })
     }
@@ -54,24 +64,29 @@ class UsersPageContainer extends React.Component {
 
 }
 
-const mapStateToProps = (state) => {
-    return {
-        users: state.usersPage.users,
-        currentPage: state.usersPage.currentPage,
-        pageSize: state.usersPage.pageSize,
-        totalUsersCount: state.usersPage.totalUsersCount,
-        isFetching: state.usersPage.isFetching
+const
+    mapStateToProps = (state) => {
+        return {
+            users: state.usersPage.users,
+            currentPage: state.usersPage.currentPage,
+            pageSize: state.usersPage.pageSize,
+            totalUsersCount: state.usersPage.totalUsersCount,
+            isFetching: state.usersPage.isFetching
+        }
     }
-}
 
 export default connect(mapStateToProps, {
     setUsers,
     follow,
-    unFollow,
+    unfollow,
     setCurrentPage,
     setUsersCount,
     isFetchingToggle
-})(UsersPageContainer)
+})
+
+(
+    UsersPageContainer
+)
 
 // method to create dispatch to props
 // const mapDispatchToProps = (dispatch) => {

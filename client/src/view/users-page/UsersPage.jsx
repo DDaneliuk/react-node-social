@@ -22,7 +22,7 @@ const UsersPage = (props) => {
                 </div>
                 <div className={style.usersWidth}>
                     {props.users.map(u => (
-                        <UserCard key={u.id}
+                        <UserCard key={u._id}
                                   user={u}
                                   follow={(userId) => props.follow(userId)}
                                   unfollow={(userId) => props.unfollow(userId)}

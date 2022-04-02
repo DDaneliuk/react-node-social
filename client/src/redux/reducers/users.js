@@ -23,7 +23,7 @@ const usersReducer = (state = initialState, action) => {
             return {
                 ...state,
                 users: state.users.map(u => {
-                    if (u.id === action.userId) {
+                    if (u._id === action.userId) {
                         return {...u, followed: true}
                     }
                     return u
@@ -33,7 +33,7 @@ const usersReducer = (state = initialState, action) => {
             return {
                 ...state,
                 users: state.users.map(u => {
-                    if (u.id === action.userId) {
+                    if (u._id === action.userId) {
                         return {...u, followed: false}
                     }
                     return u
@@ -52,7 +52,7 @@ const usersReducer = (state = initialState, action) => {
 
 export const setUsers = (users) => ({type: 'SET_USERS', users})
 export const follow = (userId) => ({type: 'FOLLOW', userId})
-export const unFollow = (userId) => ({type: 'UNFOLLOW', userId})
+export const unfollow = (userId) => ({type: 'UNFOLLOW', userId})
 export const isFetchingToggle = (toggle) => ({type: 'IS_FETCHING', toggle})
 //pagination
 export const setCurrentPage = (currentPage) => ({type: 'SET_CURRENT_PAGE', currentPage})
