@@ -24,6 +24,7 @@ mongoose.connect(dbURL, {useNewUrlParser: true, useUnifiedTopology: true})
         app.listen(PORT, () => {
             console.log(`Server listening on ${PORT}`);
         });
+        console.log("Connected to DB")
     })
     .catch(err => console.log(err))
 
@@ -90,11 +91,32 @@ app.post('/login', async (req, res) => {
         })
 })
 
-app.get('/users', validationJWT, (req, res, next) => {
+app.get('/users', validationJWT, async (req, res) => {
+    const page = req.query.page
+    const limit = req.query.limit
+    const startIndex = (page - 1) * limit;
+    const totalCount = await User.count()
+    if (page < 0 || page === 0) {
+        res.json({message: "Invalid page number"})
+    }
+    const users = await User.find().skip(startIndex).limit(limit)
     res.json({
-        isLoggedIn: true,
-        id: req.user.id,
-        email: req.user.email,
-        username: req.user.username,
+        totalCount: totalCount,
+        page: page,
+        limit: limit,
+        users: users
+    })
+})
+
+app.get('/auth', validationJWT, (req, res) => {
+
+    res.json({
+        message: [],
+        data: {
+            id: req.user.id,
+            username: req.user.username,
+            email: req.user.email,
+            isLoggedIn: true
+        },
     })
 })

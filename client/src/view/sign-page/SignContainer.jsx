@@ -3,7 +3,6 @@ import {connect} from "react-redux";
 import SignPage from "./SignPage";
 import {setServerMess, setUserEmail, setUserPassword, setUserUsername, signUpUser} from "../../redux/reducers/signup";
 import axios from "axios";
-import {setUserToken} from "../../redux/reducers/auth";
 
 class SignContainer extends React.Component {
     onSignUp = () => {
@@ -44,5 +43,5 @@ const mapStateToProps = (state) => {
 
 export default connect(mapStateToProps, {
     signUpUser,
-    setUserEmail, setUserUsername, setUserPassword, setServerMess, setUserToken
+    setUserEmail, setUserUsername, setUserPassword, setServerMess
 })(SignContainer)
