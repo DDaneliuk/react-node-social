@@ -15,17 +15,19 @@ const LoginPage = (props) => {
     }
     return (
         <div className='pageLayout'>
-            <h1>Login</h1>
-            <div className={style.formWrapper}>
-                <form>
-                    <label>Email or username</label>
-                    <input onChange={onUsernameChange} type="text" placeholder="Username"/>
-                    <label>Password</label>
-                    <input onChange={onUserPassChange} type="password" placeholder="Password"/>
-                    <button onClick={onFormSubmit} type="submit" className={`primaryBtn ${style.loginBtn}`}>Log in
-                    </button>
-                    {props.serverMessage ? <p>{props.serverMessage}</p> : null}
-                </form>
+            <div className={style.wrapper}>
+                <h1>Login</h1>
+                <div className={style.formWrapper}>
+                    <form>
+                        <label>Username</label>
+                        <input onChange={onUsernameChange} type="text" placeholder="Username"/>
+                        <label>Password</label>
+                        <input onChange={onUserPassChange} type="password" placeholder="Password"/>
+                        <button onClick={onFormSubmit} type="submit" className={`primaryBtn ${style.loginBtn}`}>Log in
+                        </button>
+                        {props.serverMessage ? <p>{props.serverMessage}</p> : null}
+                    </form>
+                </div>
             </div>
         </div>
     )

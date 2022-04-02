@@ -66,6 +66,7 @@ app.post('/login', async (req, res) => {
                     if (isCorrect) {
                         const payload = {
                             id: dbUser._id,
+                            email: dbUser.email,
                             username: dbUser.username,
                         }
                         jwt.sign(
@@ -90,6 +91,10 @@ app.post('/login', async (req, res) => {
 })
 
 app.get('/users', validationJWT, (req, res, next) => {
-    console.log(req.body)
-    res.json({isLoggedIn: true, username: req.user.username})
+    res.json({
+        isLoggedIn: true,
+        id: req.user.id,
+        email: req.user.email,
+        username: req.user.username,
+    })
 })

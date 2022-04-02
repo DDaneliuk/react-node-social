@@ -1,5 +1,5 @@
 .formWrapper{
-  width: 300px;
+  width: 400px;
 }
 .loginBtn{
   display: block;
@@ -8,4 +8,9 @@
 }
 form input{
   width: 100%;
+  margin: 0 0 10px;
+}
+.wrapper{
+  width: fit-content;
+  margin: 200px auto;
 }

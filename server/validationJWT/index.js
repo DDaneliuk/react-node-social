@@ -11,6 +11,7 @@ function validationJWT(req, res, next){
             })
             req.user = {};
             req.user.id = decode.id
+            req.user.email = decode.email
             req.user.username = decode.username
             next()
         })
