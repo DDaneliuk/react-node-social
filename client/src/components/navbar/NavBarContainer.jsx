@@ -12,8 +12,11 @@ class NavBarContainer extends React.Component {
                 'x-access-token': localStorage.getItem('token')
             }
         }).then(res => {
-            const {id, username, email, isLoggedIn} = res.data.data
-            this.props.setUserData(id, username, email, isLoggedIn)
+            const {isLoggedIn} = res.data
+            if (isLoggedIn) {
+                const {id, username, email} = res.data.data
+                this.props.setUserData(id, username, email, isLoggedIn)
+            }
         })
     }
 

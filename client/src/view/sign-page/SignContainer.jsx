@@ -9,7 +9,7 @@ class SignContainer extends React.Component {
         if (!this.props.email || !this.props.username || !this.props.password) {
             this.props.setServerMess("Fill all fields before signing up")
         } else {
-            axios.post(`http://localhost:3001/signup`, {
+            axios.post(`http://localhost:3001/auth/signup`, {
                 email: this.props.email,
                 username: this.props.username,
                 password: this.props.password

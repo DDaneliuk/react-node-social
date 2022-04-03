@@ -6,7 +6,7 @@ import axios from "axios";
 
 class LoginContainer extends React.Component {
     onLoginSubmit = () => {
-        axios.post(`http://localhost:3001/login`, {
+        axios.post(`http://localhost:3001/auth/login`, {
             username: this.props.username,
             password: this.props.password
         }).then(res => {
