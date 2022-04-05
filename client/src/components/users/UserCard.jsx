@@ -11,7 +11,7 @@ const UserCard = (props) => {
                     <NavLink to={`/profile/${props.user._id}`}> <p className={style.userName}>{props.user.username}</p></NavLink>
                 </div>
                 <div className={style.userFollow}>
-                    <p>{props.user.location.city}, {props.user.location.country}</p>
+                    <p>{props.user.location ? <p>{props.user.location.city}, {props.user.location.country}</p> : null}</p>
                     {props.user.followed ?
                         <button className='outlineBtn' onClick={() => props.unfollow(props.user._id)}>Followed</button> :
                         <button className='primaryBtn' onClick={() => props.follow(props.user._id)}>Follow</button>

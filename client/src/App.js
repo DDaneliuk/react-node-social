@@ -13,7 +13,7 @@ function App(props) {
         <div className="App">
             <NavBarContainer/>
             <Routes>
-                <Route path="/profile/:id" element={<ProfilePageParams/>}/>
+                <Route path="/profile/:id" exact element={<ProfilePageParams/>}/>
                 <Route path="/message" element={<MessagePageContainer/>}/>
                 <Route path="/users" element={<UsersPageContainer/>}/>
                 <Route path='/login' element={<LoginContainer/>}/>

@@ -5,11 +5,15 @@ import {connect} from "react-redux";
 import {setUserProfile} from "../../redux/reducers/profile";
 
 class ProfileContainer extends React.Component {
-    debugger
     componentDidMount() {
-        axios.get(`http://localhost:8000/profile/${this.props.params.id}`)
+        axios.get(`http://localhost:3001/profile/${this.props.params.id}`, {
+            headers: {
+                'Content-Type': 'application/json',
+                'x-access-token': localStorage.getItem('token')
+            }
+        })
             .then(res => {
-                this.props.setUserProfile(res.data);
+                this.props.setUserProfile(res.data.user);
             })
     }
 

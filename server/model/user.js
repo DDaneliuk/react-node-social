@@ -1,4 +1,5 @@
 const mongoose = require('mongoose')
+const Schema = mongoose.Schema
 
 const userSchema = mongoose.Schema({
     username:{
@@ -13,6 +14,10 @@ const userSchema = mongoose.Schema({
         type: String,
         required: true,
     },
+    posts:[{
+        type: Schema.Types.ObjectId,
+        ref: "Post"
+    }]
 }, {timestamps: true})
 
 const User = mongoose.model("User", userSchema)
